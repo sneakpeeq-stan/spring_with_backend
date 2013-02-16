@@ -1,0 +1,20 @@
+@namespace("sneakpeeq.common.ipc")
+protocol Carts {
+  import idl "Members.avdl";
+  import idl "Products.avdl";
+  import idl "Sites.avdl";
+
+  @namespace("sneakpeeq.common.models")
+  record CartLineItem {
+    Product product;
+    Variant variant;
+  }
+
+  @namespace("sneakpeeq.common.models")
+  record Cart {
+    array<CartLineItem> lineItems;
+    Member member;
+    ShippingProfile shippingProfile;  //specific shipping profile used
+    PaymentProfile paymentProfile;    //specific payment profile used
+  }
+}

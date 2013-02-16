@@ -1,0 +1,10 @@
+@namespace("sneakpeeq.common.ipc")
+protocol Sites {
+
+  @namespace("sneakpeeq.common.models")
+  record Site {
+    string subdomian;
+    string domain;
+    string name;
+  }
+}

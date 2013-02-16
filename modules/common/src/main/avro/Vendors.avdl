@@ -1,0 +1,4 @@
+@namespace("sneakpeeq.common.ipc")
+protocol Vendors {
+
+}

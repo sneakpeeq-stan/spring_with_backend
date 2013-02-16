@@ -1,0 +1,7 @@
+@namespace("sneakpeeq.common.ipc")
+protocol Commons {
+  @namespace("sneakpeeq.common.exceptions")
+  error NotFoundError {
+    string errorMessage;
+  }
+}

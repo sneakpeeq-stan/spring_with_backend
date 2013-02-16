@@ -1,0 +1,27 @@
+@namespace("sneakpeeq.common.ipc")
+protocol Products {
+  import idl "Sites.avdl";
+  import idl "Commons.avdl";
+
+  @namespace("sneakpeeq.common.models")
+  record Variant {
+      long id;
+      string name;
+      map<string> attributes;
+    }
+
+  @namespace("sneakpeeq.common.models")
+  record Product {
+    union {long, null} id;
+    string name;
+    union {string, null} description;
+    boolean active = false;
+    union {array<Variant>, null} variants = [];
+    union {map<string>, null} attributes = {};
+    union {Site, null} site;
+  }
+
+  array<sneakpeeq.common.models.Product> findAll();
+  sneakpeeq.common.models.Product findById(int id);
+  array<sneakpeeq.common.models.Product> findBySiteId(int siteId);
+}

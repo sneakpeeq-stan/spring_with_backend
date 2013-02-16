@@ -1,0 +1,31 @@
+@namespace("sneakpeeq.common.ipc")
+protocol Members {
+  @namespace("sneakpeeq.common.models")
+  record PaymentProfile {
+
+  }
+
+  @namespace("sneakpeeq.common.models")
+  record ShippingProfile {
+
+  }
+
+  @namespace("sneakpeeq.common.models")
+  record Member {
+    long id;
+    string firstName;
+    string lastName;
+  }
+
+  @namespace("sneakpeeq.common.models")
+  record MemberExtended {
+    Member o;
+    long facebookId;
+    array<PaymentProfile> paymentProfiles;
+    union{null, PaymentProfile} defaultPaymentProfile;
+    array<ShippingProfile> shippingProfiles;
+    union{null, ShippingProfile} defaultShippingProfile;
+
+
+  }
+}
